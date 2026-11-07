@@ -128,4 +128,20 @@
     font-size: 1.15rem;
     color: var(--color-tinta);
   }
+
+  @media (max-width: 759px), (max-height: 499px) {
+    h2 {
+      font-size: 1.9rem;
+    }
+    .rejilla {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+    .columna {
+      width: 100%;
+    }
+    .enlace {
+      flex-wrap: wrap;
+    }
+  }
 </style>

@@ -234,6 +234,25 @@
     50% { opacity: 0; }
   }
 
+  @media (max-width: 759px), (max-height: 499px) {
+    .portada {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    h1 {
+      font-size: 2.4rem;
+    }
+    .autor {
+      align-items: flex-start;
+    }
+    .enlaces {
+      flex-wrap: wrap;
+    }
+    .lineas {
+      height: 230px;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .rejilla,
     .orbe {

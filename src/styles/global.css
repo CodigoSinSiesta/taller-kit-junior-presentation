@@ -19,6 +19,13 @@ html body .swiper-slide {
   grid-template-columns: 1fr 1fr;
 }
 
+/* Los comandos largos parten línea en vez de quedar recortados dentro de su caja. */
+#deck .step pre,
+#deck .step code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 #deck .step {
   grid-template-columns: 44px 1fr;
   gap: 12px;
@@ -143,4 +150,68 @@ html body .swiper-slide.plano {
   font-family: var(--font-mono);
   font-size: 15px;
   color: var(--color-tinta2);
+}
+
+.plano-aviso {
+  display: none;
+}
+
+/* Modo compacto: móviles y pantallas bajas. Las diapositivas se reordenan a tamaño natural y se desplazan en vertical. */
+@media (max-width: 759px), (max-height: 499px) {
+  html body .swiper-slide {
+    height: 100dvh;
+  }
+
+  #deck .csi-slide {
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 52px 0 76px;
+  }
+
+  #deck .csi-slide-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #deck .handson-list {
+    grid-template-columns: 1fr;
+  }
+
+  .slide-breadcrumb .sep,
+  .slide-breadcrumb .deck {
+    display: none;
+  }
+
+  .slide-footer {
+    display: none;
+  }
+}
+
+/* Móvil en vertical: el lienzo de la plantilla ocupa el ancho, arriba, y se avisa de que conviene girarlo. */
+@media (max-width: 759px) and (orientation: portrait) {
+  .plano-escena {
+    top: 64px;
+    left: 0;
+    transform: scale(var(--escala-plano));
+    transform-origin: top left;
+  }
+
+  .plano-aviso {
+    display: block;
+    position: absolute;
+    top: calc(64px + 1080px * var(--escala-plano) + 20px);
+    left: 16px;
+    right: 16px;
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--color-cielo);
+  }
+
+  .plano-fuente {
+    left: 16px;
+    right: 16px;
+    bottom: 76px;
+  }
 }

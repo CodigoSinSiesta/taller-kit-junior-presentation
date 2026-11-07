@@ -12,4 +12,5 @@
 <div class="swiper-slide plano" data-plantilla={plantilla} data-datos={JSON.stringify(datos)} data-auto={auto ? '1' : undefined}>
   <div class="plano-escena"></div>
   {#if fuente}<p class="plano-fuente">{fuente}</p>{/if}
+  <p class="plano-aviso">Gira el móvil para verla mejor</p>
 </div>

@@ -12,8 +12,11 @@ let activo: HTMLElement | null = null;
 
 const tiempo = (p: Plano) => (performance.now() - p.inicio) / 1000;
 
+// En un móvil en vertical el lienzo se ajusta al ancho y la diapositiva avisa de que conviene girarlo.
+const vertical = matchMedia('(max-width: 759px) and (orientation: portrait)');
+
 function escalar() {
-  const escala = Math.min(innerWidth / 1920, innerHeight / 1080);
+  const escala = vertical.matches ? innerWidth / 1920 : Math.min(innerWidth / 1920, innerHeight / 1080);
   document.documentElement.style.setProperty('--escala-plano', String(escala));
 }
 

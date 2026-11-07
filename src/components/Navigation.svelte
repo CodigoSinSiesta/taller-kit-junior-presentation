@@ -5,17 +5,25 @@
   let total = $state(0);
   let diapositivas: HTMLElement[] = [];
 
-  // Busca la mayor escala con la que la diapositiva cabe entera, sea cual sea la pantalla.
+  // Pantallas estrechas o bajas: la diapositiva se reordena a tamaño natural y se desplaza (ver global.css).
+  const COMPACTO = '(max-width: 759px), (max-height: 499px)';
+
+  // Busca la mayor escala con la que la diapositiva cabe entera, a lo alto y a lo ancho, sea cual sea la pantalla.
   function encajar(diapositiva: HTMLElement) {
     const contenido = diapositiva.querySelector<HTMLElement>('.csi-slide-content');
     if (!contenido) return;
+    if (matchMedia(COMPACTO).matches) {
+      contenido.style.removeProperty('zoom');
+      return;
+    }
     const disponible = window.innerHeight - 100;
     let minimo = 0.6;
     let maximo = 1.45 * Math.max(1, window.innerWidth / 1280);
     for (let i = 0; i < 8; i++) {
       const escala = (minimo + maximo) / 2;
       contenido.style.setProperty('zoom', String(escala));
-      if (contenido.getBoundingClientRect().height <= disponible) minimo = escala;
+      const cabe = contenido.getBoundingClientRect().height <= disponible && diapositiva.scrollWidth <= window.innerWidth + 1;
+      if (cabe) minimo = escala;
       else maximo = escala;
     }
     contenido.style.setProperty('zoom', String(minimo));
