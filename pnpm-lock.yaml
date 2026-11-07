@@ -13,13 +13,10 @@ importers:
         version: 7.2.5(astro@5.18.2(rollup@4.67.5)(typescript@5.9.3))(svelte@5.57.3)(typescript@5.9.3)
       '@codigosinsiesta/theme':
         specifier: github:CodigoSinSiesta/theme
-        version: https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/7cbaa3ada4a24b39a08b0ff85ea5304a3e051f3a(svelte@5.57.3)
+        version: https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/131e0c6a67c7e5c8920b041a615bb0fa41dfee4a(svelte@5.57.3)
       astro:
         specifier: ^5.18.1
         version: 5.18.2(rollup@4.67.5)(typescript@5.9.3)
-      qrcode:
-        specifier: ^1.5.4
-        version: 1.5.4
       svelte:
         specifier: ^5.45.5
         version: 5.57.3
@@ -76,8 +73,8 @@ packages:
     resolution: {integrity: sha512-CuNiSqg7+e1cO/GjffyMOm5Tt2jUF9CWHHnvQ/UkqvtkGfHdgwEC0wpmq7fkN3gxwpRnrAN0WzO3vREKmNolMQ==}
     engines: {node: '>=18'}
 
-  '@codigosinsiesta/theme@https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/7cbaa3ada4a24b39a08b0ff85ea5304a3e051f3a':
-    resolution: {gitHosted: true, integrity: sha512-z9qgiHo4/Nd2xHhU+O0QVIiiTpB8tjm2UHdmM1qU387gnfUQs4VZB0goXlGha61KOnax1aQ2Ngnw2ocfJ+RunA==, tarball: https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/7cbaa3ada4a24b39a08b0ff85ea5304a3e051f3a}
+  '@codigosinsiesta/theme@https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/131e0c6a67c7e5c8920b041a615bb0fa41dfee4a':
+    resolution: {gitHosted: true, integrity: sha512-nnC8ugSSemrl1TtPPA/jV542U0BNUEqQb1WkFXyfTM+CRatb/FR0M8mNiAAf+J83uiPqZbZb7MiwKBs8eIb50g==, tarball: https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/131e0c6a67c7e5c8920b041a615bb0fa41dfee4a}
     version: 0.7.0
     peerDependencies:
       svelte: '>=5.0.0'
@@ -1970,7 +1967,9 @@ snapshots:
     dependencies:
       fontkitten: 1.0.3
 
-  '@codigosinsiesta/theme@https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/7cbaa3ada4a24b39a08b0ff85ea5304a3e051f3a(svelte@5.57.3)':
+  '@codigosinsiesta/theme@https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/131e0c6a67c7e5c8920b041a615bb0fa41dfee4a(svelte@5.57.3)':
+    dependencies:
+      qrcode: 1.5.4
     optionalDependencies:
       svelte: 5.57.3
 

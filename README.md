@@ -20,16 +20,11 @@ Navegación: `←` / `→`, espacio o los botones. `#/12` abre la diapositiva 12
 ## Estructura
 
 - `src/components/slides/`: una diapositiva por fichero, sobre las plantillas de `@codigosinsiesta/theme`.
-- `src/components/SlideEnlaces.svelte`: diapositiva con QR real. El QR del theme es decorativo y no se puede escanear.
+- `src/components/SlideEnlaces.svelte`: recursos y cierre en dos columnas, con el `QRCode` del theme.
 - `src/components/Navigation.svelte`: navegación y escala automática para llenar cualquier pantalla.
 - `public/planos/`: plantillas copiadas del motor de vídeo (`motor/plantillas/`), más `escalera.js`, propia. Las monta `src/scripts/planos.ts`: `→` revela cada paso y, al acabar, pasa de diapositiva.
 - `src/config/workshop.ts`: los enlaces del taller.
 - `guia/`: notas del ponente, una por diapositiva. Lo marcado como PENDIENTE se comprueba antes de impartirlo.
-
-## Marca
-
-`src/styles/global.css` fija la tipografía y el color de texto de la marca unificada. Se puede quitar en cuanto la rama
-`feat/marca-unificada` del theme llegue a `main`.
 
 ## Despliegue
 

@@ -1,12 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 @import '@codigosinsiesta/theme/all.css';
-
-/* Marca unificada de identidad/BRAND.md. La versión del theme en GitHub aún no la trae:
-   estas dos líneas sobran cuando se fusione la rama feat/marca-unificada del theme. */
-:root {
-  --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-  --color-tinta: #faf9f6;
-}
 
 /* Solo se ve la diapositiva activa. */
 html body .swiper-slide:not(.activa) {

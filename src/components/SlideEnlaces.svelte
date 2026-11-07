@@ -1,6 +1,6 @@
 <script lang="ts">
-  // Sustituye a SlideResources del theme: su QR es un dibujo decorativo que no se puede escanear.
-  import QRCode from 'qrcode';
+  // Cierre y recursos con el QR del theme. Se mantiene propia por la maquetación: ideas, enlaces y QR en dos columnas.
+  import QRCode from '@codigosinsiesta/theme/components/QRCode.svelte';
   import SlideShell from '@codigosinsiesta/theme/slides/SlideShell.svelte';
   import Eyebrow from '@codigosinsiesta/theme/components/Eyebrow.svelte';
 
@@ -25,19 +25,6 @@
     qrTitle?: string;
     closing?: string;
   }>();
-
-  const MARGEN = 4;
-  const modulos = $derived(QRCode.create(qrUrl, { errorCorrectionLevel: 'M' }).modules);
-  const lado = $derived(modulos.size + MARGEN * 2);
-  const celdas = $derived.by(() => {
-    const resultado: { x: number; y: number }[] = [];
-    for (let y = 0; y < modulos.size; y++) {
-      for (let x = 0; x < modulos.size; x++) {
-        if (modulos.get(y, x)) resultado.push({ x: x + MARGEN, y: y + MARGEN });
-      }
-    }
-    return resultado;
-  });
 
   const partes = $derived(title.split(titleHighlight));
 
@@ -65,15 +52,7 @@
       {/each}
     </div>
 
-    <figure>
-      <svg viewBox="0 0 {lado} {lado}" role="img" aria-label="Código QR: {qrTitle}" shape-rendering="crispEdges">
-        <rect width={lado} height={lado} fill="#FAF9F6" />
-        {#each celdas as celda}
-          <rect x={celda.x} y={celda.y} width="1" height="1" fill="#0f172a" />
-        {/each}
-      </svg>
-      <figcaption>{qrTitle}</figcaption>
-    </figure>
+    <QRCode size={250} bgColor="#FAF9F6" title={qrTitle} url={qrUrl} />
   </div>
 
   {#if closing}<p class="cierre">{closing}</p>{/if}
@@ -143,23 +122,6 @@
     font-family: var(--font-mono);
     font-size: 0.95rem;
     color: var(--color-cielo);
-  }
-  figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 0;
-  }
-  svg {
-    width: 250px;
-    height: 250px;
-    border-radius: 12px;
-  }
-  figcaption {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    color: var(--color-tinta2);
   }
   .cierre {
     margin: 0;
