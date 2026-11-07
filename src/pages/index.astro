@@ -1,0 +1,75 @@
+---
+import Navigation from '../components/Navigation.svelte';
+import PresentationLayout from '../layouts/PresentationLayout.astro';
+import Slide01Hero from '../components/slides/Slide01Hero.svelte';
+import Slide02Recursos from '../components/slides/Slide02Recursos.svelte';
+import Slide03Agenda from '../components/slides/Slide03Agenda.svelte';
+import Slide04Pregunta from '../components/slides/Slide04Pregunta.svelte';
+import Slide05Estudio from '../components/slides/Slide05Estudio.svelte';
+import Slide06ComoLaUsas from '../components/slides/Slide06ComoLaUsas.svelte';
+import Slide07Tesis from '../components/slides/Slide07Tesis.svelte';
+import Slide08TresFormas from '../components/slides/Slide08TresFormas.svelte';
+import Slide09Bucle from '../components/slides/Slide09Bucle.svelte';
+import Slide10ModeloTexto from '../components/slides/Slide10ModeloTexto.svelte';
+import Slide11Capas from '../components/slides/Slide11Capas.svelte';
+import Slide12PorQueOpenCode from '../components/slides/Slide12PorQueOpenCode.svelte';
+import Slide13DosAgentes from '../components/slides/Slide13DosAgentes.svelte';
+import Slide14Ejercicio1 from '../components/slides/Slide14Ejercicio1.svelte';
+import Slide15Ejercicio2 from '../components/slides/Slide15Ejercicio2.svelte';
+import Slide16Examen from '../components/slides/Slide16Examen.svelte';
+import Slide17Contexto from '../components/slides/Slide17Contexto.svelte';
+import Slide18QueNoPegar from '../components/slides/Slide18QueNoPegar.svelte';
+import Slide19TusDatos from '../components/slides/Slide19TusDatos.svelte';
+import Slide20Autoria from '../components/slides/Slide20Autoria.svelte';
+import Slide21Descanso from '../components/slides/Slide21Descanso.svelte';
+import Slide22PrimerTutor from '../components/slides/Slide22PrimerTutor.svelte';
+import Slide23ListaBlanca from '../components/slides/Slide23ListaBlanca.svelte';
+import Slide24Ejercicio3 from '../components/slides/Slide24Ejercicio3.svelte';
+import Slide25Escalera from '../components/slides/Slide25Escalera.svelte';
+import Slide26Ejercicio4 from '../components/slides/Slide26Ejercicio4.svelte';
+import Slide27Adaptar from '../components/slides/Slide27Adaptar.svelte';
+import Slide28Ejercicio5 from '../components/slides/Slide28Ejercicio5.svelte';
+import Slide29Cierre from '../components/slides/Slide29Cierre.svelte';
+
+const base = `${import.meta.env.BASE_URL}/`.replace('//', '/');
+const plantillas = ["runtime", "agent-card", "config", "escalera", "filetree", "layers", "loop", "matrix", "model-switch", "myth", "next-token", "orchestra", "permissions", "prompt-assembly", "rules", "stat", "timeline"];
+---
+
+<PresentationLayout>
+  <main id="deck">
+    <Slide01Hero />
+    <Slide02Recursos />
+    <Slide03Agenda />
+    <Slide04Pregunta />
+    <Slide05Estudio />
+    <Slide06ComoLaUsas />
+    <Slide07Tesis />
+    <Slide08TresFormas />
+    <Slide09Bucle />
+    <Slide10ModeloTexto />
+    <Slide11Capas />
+    <Slide12PorQueOpenCode />
+    <Slide13DosAgentes />
+    <Slide14Ejercicio1 />
+    <Slide15Ejercicio2 />
+    <Slide16Examen />
+    <Slide17Contexto />
+    <Slide18QueNoPegar />
+    <Slide19TusDatos />
+    <Slide20Autoria />
+    <Slide21Descanso />
+    <Slide22PrimerTutor />
+    <Slide23ListaBlanca />
+    <Slide24Ejercicio3 />
+    <Slide25Escalera />
+    <Slide26Ejercicio4 />
+    <Slide27Adaptar />
+    <Slide28Ejercicio5 />
+    <Slide29Cierre />
+  </main>
+  <Navigation client:load />
+</PresentationLayout>
+
+{plantillas.map((p) => <script is:inline src={`${base}planos/${p}.js`}></script>)}
+<script src="../scripts/terminal-portada.ts"></script>
+<script src="../scripts/planos.ts"></script>

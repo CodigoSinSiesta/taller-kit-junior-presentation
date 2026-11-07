@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+
+const base = `${import.meta.env.BASE_URL}/`.replace('//', '/');
+const marca = `${base}logo-owl-oficial-web.svg`;
+---
+
+<!doctype html>
+<html lang="es" data-base={base}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kit de supervivencia para juniors · Código Sin Siesta</title>
+    <link rel="stylesheet" href={`${base}planos/tpl.css`} />
+    <link rel="icon" type="image/svg+xml" href={marca} />
+    <meta name="description" content="Taller de 2 horas: configura la IA para que te enseñe en lugar de hacer el trabajo por ti." />
+  </head>
+  <body>
+    <div class="slide-accent-bar" aria-hidden="true"></div>
+    <div class="slide-breadcrumb" aria-hidden="true">
+      <div class="crumbs">
+        <img class="marca" src={marca} alt="" height="22" />
+        <span class="org">código sin siesta</span>
+        <span class="sep">/</span>
+        <span class="deck">kit de supervivencia para juniors</span>
+      </div>
+      <div class="counter" id="slide-counter">01 / 29</div>
+    </div>
+    <div class="slide-footer" aria-hidden="true">
+      <span>Hecho con <span class="heart">♥</span> por Código Sin Siesta · 2026</span>
+    </div>
+    <slot />
+  </body>
+</html>

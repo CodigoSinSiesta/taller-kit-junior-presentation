@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import '@codigosinsiesta/theme/all.css';
+
+/* Marca unificada de identidad/BRAND.md. La versión del theme en GitHub aún no la trae:
+   estas dos líneas sobran cuando se fusione la rama feat/marca-unificada del theme. */
+:root {
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --color-tinta: #faf9f6;
+}
+
+/* Solo se ve la diapositiva activa. */
+html body .swiper-slide:not(.activa) {
+  display: none !important;
+}
+
+body {
+  overflow: hidden;
+  background: var(--color-fondo);
+}
+
+html body .swiper-slide {
+  height: 100vh;
+}
+
+/* Los ejercicios se reparten en dos columnas para que quepan en una pantalla proyectada. */
+#deck .handson-list {
+  grid-template-columns: 1fr 1fr;
+}
+
+#deck .step {
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  padding: 14px 18px;
+}
+
+/* Legibilidad en sala: BRAND.md pide texto de 16 px y etiquetas de 15 px como mínimo sobre este lienzo de 1280. */
+#deck .csi-eyebrow,
+#deck .eyebrow-text,
+#deck .tool-badge,
+#deck .workshop-pill,
+#deck .step-label,
+#deck .stat-label,
+#deck .stat-note,
+#deck .card-label,
+#deck .tag,
+#deck .key,
+#deck .kg-key,
+#deck .micro-label,
+#deck .source-text,
+#deck .num,
+#deck .lang,
+#deck .ln,
+#deck .notes-header,
+#deck .note-tag {
+  font-size: 15px;
+}
+
+#deck .slide-footer {
+  display: none;
+}
+
+#deck .item-body,
+#deck code,
+#deck li,
+#deck .pipeline p,
+#deck .step p,
+#deck .card p,
+#deck .step-body p {
+  font-size: 16px;
+}
+
+/* Cada diapositiva se centra y Navigation.svelte la escala para llenar la pantalla. */
+#deck .csi-slide {
+  box-sizing: border-box;
+  align-items: center;
+  padding: 44px 0 56px;
+  overflow: hidden;
+}
+
+#deck .csi-slide-content {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* El degradado del theme se apaga en frases largas. */
+#deck .statement-wrap .highlight,
+#deck .statement .highlight {
+  background: none;
+  -webkit-text-fill-color: var(--color-cielo);
+  color: var(--color-cielo);
+}
+
+#deck .note-text {
+  font-size: 15px;
+}
+
+#deck .csi-callout .title,
+#deck .csi-callout .content {
+  font-size: 16px;
+}
+
+.slide-breadcrumb .marca {
+  display: block;
+}
+
+#deck .chip {
+  font-size: 15px;
+}
+
+#deck .value {
+  font-size: 15px;
+}
+
+/* Más ancho para el código: las reglas de permisos son líneas largas. */
+#deck .code-row {
+  grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
+}
+
+/* Diapositivas con plantillas del motor de vídeo: lienzo de 1920×1080 escalado a la pantalla. */
+:root {
+  --navy: #0f172a; --navy2: #152033; --cyan: #60a5fa; --teal: #3b82f6; --blue: #1e3a8a; --pale: #cbd5e1; --pale3: #94a3b8;
+  --ink: #faf9f6; --red: #f87171; --amber: #fbbf24; --ok: #34d399;
+  --grad: linear-gradient(90deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
+  --shadow: 0 20px 60px rgba(10, 22, 40, 0.85);
+  --mono: 'JetBrains Mono', monospace; --disp: 'Space Grotesk', sans-serif;
+}
+
+html body .swiper-slide.plano {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(59, 130, 246, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(30, 58, 138, 0.14) 0%, transparent 55%);
+}
+
+.plano-escena {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%) scale(var(--escala-plano, 0.667));
+}
+
+.plano-fuente {
+  position: absolute;
+  left: 5%;
+  bottom: 44px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--color-tinta2);
+}
