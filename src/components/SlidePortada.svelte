@@ -113,11 +113,13 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    container-type: inline-size;
   }
   h1 {
     margin: 0;
     font-family: var(--font-display);
-    font-size: 3.5rem;
+    /* «supervivencia» no se puede partir: con la columna estrecha la letra baja para que quepa. */
+    font-size: min(3.5rem, 15cqi);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.02em;
@@ -150,6 +152,10 @@
     flex: none;
     border-radius: 50%;
   }
+  /* Sin esto la fila de enlaces fija el ancho mínimo y el texto se sale de la tarjeta. */
+  .autor > div {
+    min-width: 0;
+  }
   .autor p {
     margin: 0;
   }
@@ -164,7 +170,8 @@
   }
   .enlaces {
     display: flex;
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 2px 14px;
     margin-top: 4px !important;
     font-size: 15px;
   }
@@ -240,7 +247,7 @@
       gap: 20px;
     }
     h1 {
-      font-size: 2.4rem;
+      font-size: min(2.4rem, 15cqi);
     }
     .autor {
       align-items: flex-start;
